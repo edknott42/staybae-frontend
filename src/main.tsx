@@ -12,6 +12,11 @@ const siteBaseName =
   process.env.NODE_ENV !== 'development' ? '/staybae-frontend/' : '/';
 
 
+const mockWorkerUrl = 
+process.env.NODE_ENV !== 'development'
+? '/staybae-frontend/mockServiceWorker.js'
+: '/mockServiceWorker.js';
+
 async function enableMocking() {
   // if (process.env.NODE_ENV !== 'development') {
   //   return;
@@ -26,9 +31,8 @@ async function enableMocking() {
   return worker.start({
     serviceWorker: {
       url:
-        process.env.NODE_ENV !== 'development'
-          ? '/staybae-ui/mockServiceWorker.js'
-          : '/mockServiceWorker.js',
+        mockWorkerUrl,
+        
     },
     onUnhandledRequest: 'bypass',
   });
