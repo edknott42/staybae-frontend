@@ -1,4 +1,4 @@
-interface PropertyType {
+type PropertyType = {
   _id?: string;
   city: string;
   country: string;
@@ -18,6 +18,6 @@ interface PropertyType {
   heroImg: string;
   images: string[];
   favourited?: boolean;
-}
+};
 
 export default PropertyType;
